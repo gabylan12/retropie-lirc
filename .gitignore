@@ -1,0 +1,5 @@
+*.img.gz
+*.tar.gz
+*.log
+*.idea
+*.img
