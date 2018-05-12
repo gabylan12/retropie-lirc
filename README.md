@@ -4,9 +4,11 @@ A script to create a retropie image with lirc installed
 
 ## create image
 
-sudo bash create-image.bash $IMAGE_NAME
+sudo bash create-image.bash $IMAGE_NAME $SSID $WIFI_PASSWORD
 
-where $IMAGE_NAME is the name of the retropie image
+* $IMAGE_NAME is the name of the retropie image
+* $SSID ssid  
+* $WIFI_PASSWORD the wifi password
 
 ## emulate 
 
