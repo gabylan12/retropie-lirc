@@ -81,7 +81,6 @@ mkdir -p $buildfolder/root/etc/lirc
 cp $sourcefolder/lirc/hardware.conf $buildfolder/root/etc/lirc
 #/boot/config
 touch $buildfolder/root/boot/config.txt
-echo 'dtoverlay=lirc-rpi,gpio_out_pin=22' | sudo tee --append $buildfolder/root/boot/config.txt
 #/etc/lirc/lircd.conf
 cp $sourcefolder/lirc/lircd.conf $buildfolder/root/etc/lirc
 
@@ -97,6 +96,10 @@ echo_process "Injecting roms mame roms..."
 tar -xvf $sourcefolder/roms/mame-mame4all-roms.tar.gz --directory $buildfolder/root/home/pi/RetroPie/roms
 echo_process "Injecting roms megadrive roms..."
 tar -xvf $sourcefolder/roms/megadrive-roms.tar.gz --directory $buildfolder/root/home/pi/RetroPie/roms
+
+
+#CHANGE PI PASSWORD
+sed -i.sedbackup 's/^\(pi:\)[^:]*\(:.*\)$/\1yournewpassword\2/' /etc/shadow
 
 #CLOSE THE IMAGE
 echo_process "Closing up image file... "
