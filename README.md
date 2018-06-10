@@ -6,7 +6,7 @@ A script to create a retropie image with lirc installed
 
 sudo bash create-image.bash $IMAGE_NAME $SSID $WIFI_PASSWORD
 
-* $IMAGE_NAME is the name of the retropie image
+* $IMAGE_NAME is the name of the retropie image, you can download from https://retropie.org.uk/download/
 * $SSID ssid  
 * $WIFI_PASSWORD the wifi password
 
