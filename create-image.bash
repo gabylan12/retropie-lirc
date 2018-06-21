@@ -60,6 +60,7 @@ echo_process "Setting hostname, reactivating SSH... "
 sed -i "s/127.0.1.1.*/127.0.1.1 $hostname/" $buildfolder/root/etc/hosts
 echo "kodi" > $buildfolder/root/etc/hostname
 touch $buildfolder/boot/ssh
+echo 'country=GB' | sudo tee --append $buildfolder/root/etc/wpa_supplicant/wpa_supplicant.conf
 echo 'network={' | sudo tee --append $buildfolder/root/etc/wpa_supplicant/wpa_supplicant.conf
 echo "ssid=\"$2\"" | sudo tee --append $buildfolder/root/etc/wpa_supplicant/wpa_supplicant.conf
 echo "psk=\"$3\"" | sudo tee --append $buildfolder/root/etc/wpa_supplicant/wpa_supplicant.conf
